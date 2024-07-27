@@ -1,6 +1,7 @@
 plugins {
   alias(libs.plugins.android.application)
   alias(libs.plugins.jetbrains.kotlin.android)
+  id("kotlin-parcelize")
 }
 
 android {
@@ -39,6 +40,7 @@ dependencies {
 
   // Room components
   implementation(libs.androidx.room.runtime)
+  implementation(libs.androidx.activity)
   annotationProcessor(libs.androidx.room.compiler)
   androidTestImplementation(libs.androidx.room.testing)
 
