@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/background_transparent_blue_rounded_8"
+    android:padding="@dimen/activity_padding_8"
+    android:layout_marginBottom="8dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivCake"
+        android:src="@drawable/ic_round_cake_24"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:contentDescription="@string/divider"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvCake"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tvCake"/>
+
+    <TextView
+        android:id="@+id/tvCake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        tools:text="Kue Salju"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCake" />
+
+    <ImageView
+        android:id="@+id/ivQuantity"
+        android:src="@drawable/ic_round_quantity_24"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/activity_padding_8"
+        android:contentDescription="@string/divider"
+        app:layout_constraintBottom_toBottomOf="@id/tvQuantity"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCake"/>
+
+    <TextView
+        android:id="@+id/tvQuantity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        tools:text="1kg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivQuantity" />
+
+    <ImageView
+        android:id="@+id/ivPrice"
+        android:src="@drawable/ic_round_price_24"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/activity_padding_8"
+        android:contentDescription="@string/divider"
+        app:layout_constraintBottom_toBottomOf="@id/tvPrice"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvQuantity"/>
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        tools:text="Rp 10.000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivPrice" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#313131"
+        android:layout_marginTop="@dimen/activity_padding_8"
+        tools:text="Kue kacang mete yang dilapisi gula halus."
+        tools:lines="3"
+        app:layout_constraintTop_toBottomOf="@id/tvCake"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

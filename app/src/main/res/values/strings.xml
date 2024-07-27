@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Ayaa Cookies Sale</string>
+    <string name="divider">Divider</string>
+    <string name="add_sales">Add Sales</string>
 </resources>
