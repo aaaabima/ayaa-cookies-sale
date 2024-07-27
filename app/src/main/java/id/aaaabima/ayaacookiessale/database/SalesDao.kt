@@ -11,24 +11,30 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface SalesDao {
 
-  @Query("SELECT * FROM sales_table ORDER BY id DESC")
-  fun getSales(): Flow<List<SalesEntity>>
+    @Query("SELECT * FROM sales_table ORDER BY id DESC")
+    fun getSales(): Flow<List<SalesEntity>>
 
-  @Insert(onConflict = OnConflictStrategy.IGNORE)
-  suspend fun addSales(sales: SalesEntity)
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun addSales(sales: SalesEntity)
 
-  @Query("DELETE FROM sales_table WHERE id = :id")
-  suspend fun deleteSalesById(id: Int)
+    @Query("DELETE FROM sales_table WHERE id = :id")
+    suspend fun deleteSalesById(id: Int)
 
-  @Query("DELETE FROM sales_table")
-  suspend fun deleteAllSales()
+    @Query("DELETE FROM sales_table")
+    suspend fun deleteAllSales()
 
-  @Query("UPDATE sales_table SET cake = :cake, price = :price, description = :description, quantity = :quantity WHERE id = :id")
-  suspend fun updateSales(id: Int, cake: String, price: String, description: String, quantity: String)
+    @Query("UPDATE sales_table SET cake = :cake, price = :price, description = :description, quantity = :quantity WHERE id = :id")
+    suspend fun updateSales(
+        id: Int,
+        cake: String,
+        price: String,
+        description: String,
+        quantity: String
+    )
 
-  @Delete
-  suspend fun deleteSales(sales: SalesEntity)
+    @Delete
+    suspend fun deleteSales(sales: SalesEntity)
 
-  @Update
-  suspend fun updateSales(sales: SalesEntity)
+    @Update
+    suspend fun updateSales(sales: SalesEntity)
 }
