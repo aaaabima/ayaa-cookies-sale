@@ -62,7 +62,8 @@
         android:minHeight="48dp"
         android:textSize="18sp"
         android:hint="@string/deskripsi_kue"
-        android:inputType="textAutoComplete"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
         android:layout_marginBottom="@dimen/activity_padding_16"
         android:layout_marginHorizontal="@dimen/activity_padding_16"
         android:padding="8dp" />
