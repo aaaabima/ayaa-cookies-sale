@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.SalesDetailActivity">
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_transparent_blue_rounded_8"
+        android:textColor="@color/black"
+        android:textColorHint="#afafaf"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        android:hint="@string/nama_kue"
+        android:inputType="textAutoComplete"
+        android:padding="8dp"
+        android:layout_margin="@dimen/activity_padding_16" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_transparent_blue_rounded_8"
+        android:textColor="@color/black"
+        android:textColorHint="#afafaf"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        android:hint="@string/harga_kue"
+        android:inputType="textAutoComplete"
+        android:layout_marginBottom="@dimen/activity_padding_16"
+        android:layout_marginHorizontal="@dimen/activity_padding_16"
+        android:padding="8dp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtKuantitas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_transparent_blue_rounded_8"
+        android:textColor="@color/black"
+        android:textColorHint="#afafaf"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        android:hint="@string/kuantitas_kue"
+        android:inputType="textAutoComplete"
+        android:layout_marginBottom="@dimen/activity_padding_16"
+        android:layout_marginHorizontal="@dimen/activity_padding_16"
+        android:padding="8dp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/edtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_transparent_blue_rounded_8"
+        android:textColor="@color/black"
+        android:textColorHint="#afafaf"
+        android:minHeight="48dp"
+        android:textSize="18sp"
+        android:hint="@string/deskripsi_kue"
+        android:inputType="textAutoComplete"
+        android:layout_marginBottom="@dimen/activity_padding_16"
+        android:layout_marginHorizontal="@dimen/activity_padding_16"
+        android:padding="8dp" />
+
+    <LinearLayout
+        android:id="@+id/llButtonGroup"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnUpdate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_blue_rounded_8"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:minHeight="48dp"
+            android:text="@string/update"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_red_rounded_8"
+            android:layout_marginHorizontal="@dimen/activity_padding_16"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:textSize="18sp"
+            android:minHeight="48dp"
+            android:text="@string/delete"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

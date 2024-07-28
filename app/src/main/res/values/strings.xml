@@ -7,4 +7,6 @@
     <string name="kuantitas_kue">Kuantitas Kue (kg, gram, dll)</string>
     <string name="deskripsi_kue">Deskripsi Kue</string>
     <string name="tambahkan_kue">Tambahkan Kue</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
 </resources>
