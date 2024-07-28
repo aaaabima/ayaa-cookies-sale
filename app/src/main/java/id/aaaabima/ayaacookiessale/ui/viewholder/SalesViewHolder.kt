@@ -10,7 +10,7 @@ class SalesViewHolder(
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(salesModel: SalesModel) {
-        binding.root.setOnClickListener { onItemClicked }
+        binding.root.setOnClickListener { onItemClicked.invoke(salesModel) }
         binding.tvCake.text = salesModel.cake
         binding.tvQuantity.text = salesModel.quantity
         binding.tvPrice.text = salesModel.price
