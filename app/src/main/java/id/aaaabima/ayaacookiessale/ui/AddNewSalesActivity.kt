@@ -3,12 +3,10 @@ package id.aaaabima.ayaacookiessale.ui
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.text.TextUtils
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import id.aaaabima.ayaacookiessale.R
 import id.aaaabima.ayaacookiessale.databinding.ActivityAddNewSalesBinding
 import id.aaaabima.ayaacookiessale.ui.model.SalesModel
 
@@ -25,19 +23,21 @@ class AddNewSalesActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        initListener()
     }
 
     private fun initListener() {
         binding.btnAdd.setOnClickListener {
             val replyIntent = Intent()
-            if (validateData()) {
-                setResult(Activity.RESULT_CANCELED, replyIntent)
+            if (!validateData()) {
+                setResult(SalesActivity.RESULT_CODE_FAIL_INSERT, replyIntent)
             } else {
                 val sales = SalesModel(
-                    binding.edtName.text.toString(),
-                    binding.edtPrice.text.toString(),
-                    binding.edtKuantitas.text.toString(),
-                    binding.edtDescription.text.toString()
+                    cake = binding.edtName.text.toString(),
+                    price = binding.edtPrice.text.toString(),
+                    quantity = String.format(PRICE_FORMAT, binding.edtKuantitas.text.toString()),
+                    description = binding.edtDescription.text.toString()
                 )
                 replyIntent.putExtra(EXTRA_REPLY, sales)
                 setResult(Activity.RESULT_OK, replyIntent)
@@ -55,5 +55,6 @@ class AddNewSalesActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_REPLY = "REPLY"
+        private const val PRICE_FORMAT = "Rp %s"
     }
 }
