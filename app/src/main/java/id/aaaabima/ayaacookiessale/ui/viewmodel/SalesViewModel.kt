@@ -14,10 +14,6 @@ class SalesViewModel(private val repository: SalesRepository) : ViewModel() {
         repository.addSales(sales)
     }
 
-    fun deleteSalesById(id: Int) = viewModelScope.launch {
-        repository.deleteSalesById(id)
-    }
-
     fun deleteAllSales() = viewModelScope.launch {
         repository.deleteAllSales()
     }

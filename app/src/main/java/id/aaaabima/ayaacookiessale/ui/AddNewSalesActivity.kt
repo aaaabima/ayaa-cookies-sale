@@ -35,8 +35,8 @@ class AddNewSalesActivity : AppCompatActivity() {
             } else {
                 val sales = SalesModel(
                     cake = binding.edtName.text.toString(),
-                    price = binding.edtPrice.text.toString(),
-                    quantity = String.format(PRICE_FORMAT, binding.edtKuantitas.text.toString()),
+                    price =  String.format(PRICE_FORMAT, binding.edtKuantitas.text.toString()),
+                    quantity = binding.edtKuantitas.text.toString(),
                     description = binding.edtDescription.text.toString()
                 )
                 replyIntent.putExtra(EXTRA_REPLY, sales)
