@@ -1,13 +1,12 @@
 package id.aaaabima.ayaacookiessale.ui.model
 
-import android.os.Parcel
 import android.os.Parcelable
 import id.aaaabima.ayaacookiessale.database.SalesEntity
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
 class SalesModel(
-    val id: Int,
+    val id: Int = 0,
     val cake: String,
     val price: String,
     val description: String,
@@ -38,6 +37,8 @@ fun SalesEntity.toSalesModel() = SalesModel(
     description = description,
     quantity = quantity
 )
+
+fun List<SalesEntity>.toListSalesModel() = this.map { it.toSalesModel() }
 
 fun SalesModel.toSalesEntity() = SalesEntity(
     id = id,
