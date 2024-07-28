@@ -33,7 +33,11 @@ class SalesListAdapter(
         }
 
         override fun areContentsTheSame(oldItem: SalesModel, newItem: SalesModel): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id &&
+                    oldItem.cake == newItem.cake &&
+                    oldItem.price == newItem.price &&
+                    oldItem.description == newItem.description &&
+                    oldItem.quantity == newItem.quantity
         }
     }
 }
