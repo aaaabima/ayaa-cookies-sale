@@ -17,9 +17,6 @@ interface SalesDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addSales(sales: SalesEntity)
 
-    @Query("DELETE FROM sales_table WHERE id = :id")
-    suspend fun deleteSalesById(id: Int)
-
     @Query("DELETE FROM sales_table")
     suspend fun deleteAllSales()
 

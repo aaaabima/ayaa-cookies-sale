@@ -13,11 +13,6 @@ class SalesRepository(private val salesDao: SalesDao) {
     }
 
     @WorkerThread
-    suspend fun deleteSalesById(id: Int) {
-        salesDao.deleteSalesById(id)
-    }
-
-    @WorkerThread
     suspend fun deleteAllSales() {
         salesDao.deleteAllSales()
     }
