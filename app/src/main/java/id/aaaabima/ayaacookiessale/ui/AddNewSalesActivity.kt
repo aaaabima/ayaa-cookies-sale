@@ -35,7 +35,7 @@ class AddNewSalesActivity : AppCompatActivity() {
             } else {
                 val sales = SalesModel(
                     cake = binding.edtName.text.toString(),
-                    price =  String.format(PRICE_FORMAT, binding.edtKuantitas.text.toString()),
+                    price =  String.format(PRICE_FORMAT, binding.edtPrice.text.toString()),
                     quantity = binding.edtKuantitas.text.toString(),
                     description = binding.edtDescription.text.toString()
                 )
