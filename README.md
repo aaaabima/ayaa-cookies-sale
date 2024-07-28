@@ -5,6 +5,7 @@ This application is created as a technical test for PT. Phincon's Android kotlin
 ## Table of Contents
 - [Installation](#installation)
 - [Features](#features)
+- [Tech Stacks](#notable-tech-stacks)
 - [Author](#author)
 - [Contact Information](#contact-information)
 
@@ -28,6 +29,11 @@ This application is created as a technical test for PT. Phincon's Android kotlin
 - Create new sales from sales list.
 - Update already existing sales.
 - Delete specific sales from the list.
+
+## Notable Tech Stacks
+- MVVM
+- Room Database
+- Kotlin Coroutines
 
 ## Author
 - Mochamad Arya Bima Agfian
