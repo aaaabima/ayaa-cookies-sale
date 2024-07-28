@@ -15,21 +15,23 @@ abstract class SalesRoomDatabase : RoomDatabase() {
 
     private class SalesDatabaseCallback(
         private val coroutineScope: CoroutineScope
-    ) : RoomDatabase.Callback() {
+    ) : Callback() {
         override fun onCreate(db: SupportSQLiteDatabase) {
             super.onCreate(db)
             INSTANCE?.let { salesRoomDatabase ->
                 coroutineScope.launch {
-                    var salesDao = salesRoomDatabase.salesDao()
-
-                    salesDao.deleteAllSales()
-
-                    var sales = SalesEntity(1, "Kue Salju", "Rp 80.000", "Kue kacang mete yang dilapisi gula halus.", "1kg")
-                    salesDao.addSales(sales)
-                    sales = SalesEntity(2, "Kue Keju", "Rp 75.000", "Kue dengan base keju dan topping keju yang renyah.", "1kg")
-                    salesDao.addSales(sales)
+                    populateDatabase(salesRoomDatabase.salesDao())
                 }
             }
+        }
+
+        suspend fun populateDatabase(salesDao: SalesDao) {
+            salesDao.deleteAllSales()
+
+            var sales = SalesEntity(1, "Kue Salju", "Rp 80.000", "Kue kacang mete yang dilapisi gula halus.", "1kg")
+            salesDao.addSales(sales)
+            sales = SalesEntity(2, "Kue Keju", "Rp 75.000", "Kue dengan base keju dan topping keju yang renyah.", "1kg")
+            salesDao.addSales(sales)
         }
     }
 
