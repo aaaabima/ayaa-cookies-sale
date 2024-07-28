@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface SalesDao {
 
-    @Query("SELECT * FROM sales_table ORDER BY id DESC")
+    @Query("SELECT * FROM sales_table ORDER BY id ASC")
     fun getSales(): Flow<List<SalesEntity>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
@@ -35,6 +35,6 @@ interface SalesDao {
     @Delete
     suspend fun deleteSales(sales: SalesEntity)
 
-    @Update
+    @Update(entity = SalesEntity::class)
     suspend fun updateSales(sales: SalesEntity)
 }
